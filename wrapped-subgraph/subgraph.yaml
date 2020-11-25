@@ -1,0 +1,58 @@
+specVersion: 0.0.2
+description: Wrapped Tokens on Ethereum
+repository: https://github.com/taarushv/wrapped-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: WZEC
+    network: mainnet
+    source:
+      address: '0x4A64515E5E1d1073e83f30cB97BEd20400b66E10'
+      abi: TokenSoftToken
+      startBlock: 10960660
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - WrappedAssetTransfer
+        - WrappedAsset
+        - WrappedAssetSupply
+        - WrappedAssetMint
+      abis:
+        - name: TokenSoftToken
+          file: ./abis/TokenSoftToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleZECTransfer
+      callHandlers:
+        - function: initialize(address,string,string,uint8,uint256,bool)
+          handler: handleInit
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: WFIL
+    network: mainnet
+    source:
+      address: '0x6e1A19F235bE7ED8E3369eF73b196C07257494DE'
+      abi: TokenSoftToken
+      startBlock: 11179306
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - WrappedAssetTransfer
+        - WrappedAsset
+        - WrappedAssetSupply
+        - WrappedAssetMint
+      abis:
+        - name: TokenSoftToken
+          file: ./abis/TokenSoftToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleFILTransfer
+      callHandlers:
+        - function: initialize(address,string,string,uint8,uint256,bool)
+          handler: handleInit
+      file: ./src/mapping.ts

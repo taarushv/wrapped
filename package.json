@@ -1,0 +1,27 @@
+{
+  "name": "wrapped-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taarushv/wrapped-sdk.git"
+  },
+  "author": "Taarush Vemulapalli",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/taarushv/wrapped-sdk/issues"
+  },
+  "homepage": "https://github.com/taarushv/wrapped-sdk#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "ethers": "^5.0.19",
+    "express": "^4.17.1",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.3.0"
+  }
+}

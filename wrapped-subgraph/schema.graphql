@@ -1,0 +1,35 @@
+type WrappedAsset @entity {
+  id: ID!
+  tokenSymbol: String!
+  tokenName: String!
+  decimals: Int!
+  contractAddress: String!
+  initTxHash: String!
+  initialSupply: String!
+}
+
+type WrappedAssetSupply @entity {
+  id: ID! 
+  tokenSymbol: String!
+  decimals: Int!
+  currentSupply: String!
+}
+
+type WrappedAssetTransfer @entity {
+  id: ID!
+  tokenSymbol: String!
+  from: String!
+  to: String!
+  amount: String!
+  block: Int!
+  txHash: String!
+}
+
+type WrappedAssetMint @entity {
+  id: ID!
+  tokenSymbol: String!
+  to: String!
+  amount: String!
+  block: Int!
+  txHash: String!
+}
