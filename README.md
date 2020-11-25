@@ -4,7 +4,7 @@ This repo contains:
 * [Subgraph](https://thegraph.com/explorer/subgraph/taarushv/wrapped) implementation to query information about wrapped assets.
 * API endpoint to aggregate information from the subgraph and more. 
 * React dashboard client to visualize all the data on the client side.
-* Gist on how to interact with the subgraph.   
+* [Gist](https://gist.github.com/taarushv/7ff6e6fafedf515c715fe7baef977230) on how to interact with the subgraph.   
 
 Assets currently enabled on the subgraph: WZEC, WHNS
 ## Subgraph
